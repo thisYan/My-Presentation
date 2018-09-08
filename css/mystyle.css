@@ -1,0 +1,623 @@
+/*屏幕宽度小于600时自适应*/
+@media screen and (max-width: 600px) {
+	/*设置pullpage滚动样式*/
+    .header {
+        height: 20%;
+        font-size: 20px;
+        overflow: hidden;
+    }
+
+    .section {
+        font-size: 12px;
+        float: left;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: å¾®è½¯é›…é»‘;
+}
+
+/* music */
+@-webkit-keyframes reverseRotataZ{
+    0%{-webkit-transform: rotateZ(0deg);}
+    100%{-webkit-transform: rotateZ(-360deg);}
+}
+@-webkit-keyframes rotataZ{
+    0%{-webkit-transform: rotateZ(0deg);}
+    100%{-webkit-transform: rotateZ(360deg);}
+}
+#musicControl { position:fixed;right:10px;top:10px;margin-top:0;display:inline-block;z-index:99999999}
+#musicControl a { display:inline-block;width:40px;height:40px;overflow:hidden;background:url('../image/play.png') no-repeat;background-size:100%;}
+#musicControl a audio{width:100%;height:56px;}
+#musicControl a.stop { background-position:left bottom;}
+#musicControl a.on { background-position:0px 1px;-webkit-animation: reverseRotataZ 1.2s linear infinite;}
+#music_play_filter{width:100%;height:100%;overflow:hidden;position:fixed;top:0;left:0;z-index:99999998;}
+
+/*full page 的头部导航部分设置*/
+.header {
+    width: 100%;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    position: fixed;
+    z-index: 4;
+    font-size: 13px;
+    overflow: hidden;
+}
+
+.nav {
+    margin: 0px 15%;
+    padding: 0px;
+}
+
+.nav {
+    list-style-type: none;
+}
+
+.nav li {
+    float: left;
+    font-family: å¾®è½¯é›…é»‘;
+    line-height: 60px;
+    height: 60px;
+}
+
+.nav li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.nav li a {
+    display: block;
+    line-height: 60px;
+    height: 60px;
+    padding: 0 20px;
+}
+.nav li a:hover{
+	background-color: rgba(255, 162, 168, 0.2);
+}
+.nav .active a {
+    background-color: rgba(255, 162, 168, 0.48);
+}
+
+/*每个section的样式设置*/
+.section {
+    width: 100%;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+}
+/*2-6公用容器样式*/
+.s-container {
+    margin: 100px 25%;
+    width: 50%;
+    height: 400px;
+    text-align: center;
+    background-color: rgba(214, 209, 206, 0.85);
+    float: left;
+    border: 10px solid #fdffff;
+    border-radius: 50px;
+    padding: 30px 2%;
+    overflow: hidden;
+}
+
+/*各个section背景图片的设置*/
+.s1 {
+    background: url(../image/05.jpg) no-repeat;
+    background-size: cover;
+}
+
+.s2 {
+    background: url(../image/05.jpg) no-repeat;
+    background-size: cover;
+}
+
+.s3 {
+    background: url(../image/05.jpg) no-repeat;
+    background-size: cover;
+}
+
+.s4 {
+    background: url(../image/05.jpg) no-repeat;
+    background-size: cover;
+}
+
+.s5 {
+    background: url(../image/05.jpg) no-repeat;
+    background-size: cover;
+}
+
+.s6 {
+    background: url(../image/05.jpg) no-repeat;
+    background-size: cover;
+}
+
+/*S1样式设置*/
+.s1-container {
+    width: 100%;
+    height: 100%;
+    margin: 15% 15% 0;
+}
+
+/*S1 左边部分 */
+.s1 .left {
+    float: left;
+    text-align: center;
+}
+
+
+
+.s1 .left img {
+    border-radius: 50%;
+    border: 10px solid #FFF;
+    cursor: pointer;
+}
+
+.s1 .left img:hover {
+    border: 10px solid rgba(244, 144, 144, 0.29);
+}
+
+.s1 .left p {
+    padding: 15px 0;
+    font-size: 26px;
+    color: black;
+    font-weight: bold;
+}
+/*利用CSS3动画属性来设置left部分的移动*/
+.s1.active .left {
+    animation: move1 2s ;/*3s完成动画*/
+    -webkit-animation: move1 2s ;
+}
+
+@-webkit-keyframes move1 {
+	 0% {
+        -webkit-transform: translate(155%, -300px)
+    }
+    20% {
+        -webkit-transform: translate(155%, 0px)
+    }
+    30% {
+        -webkit-transform: translate(155%, -100px)
+    }
+    40% {
+        -webkit-transform: translate(155%, 0px)
+    }
+    50% {
+        -webkit-transform: translate(155%, -60px)
+    }
+    60% {
+        -webkit-transform: translate(155%, -0px)
+    }
+    100% {
+        -webkit-transform: translate(0px, 0px)
+    }
+}
+
+@keyframes move1 {
+    0% {
+        transform: translate(155%, -300px)
+    }
+    20% {
+        transform: translate(155%, 0px)
+    }
+    30% {
+        transform: translate(155%, -100px)
+    }
+    40% {
+        transform: translate(155%, 0px)
+    }
+    50% {
+        transform: translate(155%, -60px)
+    }
+    60% {
+        transform: translate(155%, -0px)
+    }
+    100% {
+        transform: translate(0px, 0px)
+    }
+}
+
+/*S1右边部分*/
+
+.s1 .right {
+    float: left;
+    letter-spacing: 0.1em;
+    margin: 50px 0 0 5%; 
+}
+
+.s1 .right h1 {
+    font-size: 28px;
+    font-family: æ–¹æ­£å…°äº­è¶…ç»†é»‘ç®€ä½“;
+    text-shadow: 1px 1px 1px #FFCCCC;
+    font-weight: bold;
+  
+
+    
+}
+
+.s1 .right p {
+    width: 100%;
+    text-align: right;
+    margin-left: 15%;
+    margin-top: 20px;
+    padding: 30px 0;
+    font-size: 20px;
+    color: white;
+    text-shadow: 1px 1px 1px #000000;
+    font-weight: bold;
+   
+}
+
+.s1.active .right h1 {
+    opcity: 1;
+    -webkit-animation: move2 3.5s ;
+    animation: move2 3.5s 
+}
+
+.s1.active .right p {
+    opcity: 1;
+    -webkit-animation: move2 3.5s ;
+    animation: move2 3.5s;
+}
+
+@-webkit-keyframes move2 {
+    0% {
+        -webkit-transform: translate(2000px, 0px)
+    }
+    50% {
+        -webkit-transform: translate(2000px, 0px)
+    }
+    100% {
+        -webkit-transform: translate(0px, 0)
+    }
+}
+
+@keyframes move2 {
+    0% {
+        transform: translate(2000px, 0px)
+    }
+    50% {
+        transform: translate(2000px, 0px)
+    }
+    100% {
+        transform: translate(0px, 0)
+    }
+}
+
+/*s2样式设置*/
+
+/*头部设置*/
+.s2-head {
+    height: 147px;
+    text-align: center;
+    width: 100%;
+    margin: 0px 0 0 4%;
+}
+
+/*S2的头部的头部设置*/
+.s-container .head {
+    text-indent: -1000px;
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    border: 7px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.s-container .head:hover {
+    border: 7px solid #ddd;
+    background-color: white;
+}
+.s2-container-1, .s2-container-2, .s2-container-3, .s2-container-4 {
+    width: 20%;
+    float: left;
+    text-align: center;
+    margin: 20px 2%;
+}
+
+.s2-container-1 .head {
+    background: url(../image/education.png) #efefef no-repeat center;
+}
+
+.s2-container-2 .head {
+    background: url(../image/age.png) #efefef no-repeat center;
+}
+
+.s2-container-3 .head {
+    background: url(../image/location.png) #efefef no-repeat center;
+}
+
+.s2-container-4 .head {
+    background: url(../image/status.png) #efefef no-repeat center;
+}
+
+
+/*头部的body样式*/
+.s2.active .s2-head .body {
+    opacity: 1;
+}
+.s2-head .body {
+    width: 120px;
+    margin: 10px 0;
+    line-height: 20px;
+    font-size: 16px;
+    color: #333333;
+    text-align:left;
+    opacity: 0;
+    transition: 0.5s;
+    transition-delay: 0.5s
+}
+
+/*s2body样式*/
+.s2-body {
+    clear: both;
+    margin: 0px auto 0 auto;
+    padding-top:30px;
+    width: 100%;
+    height: 200px;
+}
+
+.s2-body p {
+    font-size: 13px;
+    font-family: å®‹ä½“;
+    line-height: 50px;
+    text-indent: 2em;
+    color: black;
+    font-weight: bold;
+}
+
+.s2 p {
+    text-align: center
+}
+
+.s2.active #p1 {
+    animation: p 1.5s ;
+    -webkit-animation: p 1.5s ;
+}
+
+.s2.active #p2 {
+    animation: p 1.8s ;
+    -webkit-animation: p 1.8s ;
+}
+
+.s2.active #p3 {
+    animation: p 2s ;
+    -webkit-animation: p 2s ;
+}
+
+@-webkit-keyframes p {
+    0% {
+        -webkit-transform: translate(0px, 2000px)
+    }
+    100% {
+        -webkit-transform: translate(0px, 0px)
+    }
+}
+
+@keyframes p {
+    0% {
+        transform: translate(0px, 2000px)
+    }
+    100% {
+        transform: translate(0px, 0px)
+    }
+}
+/*第四个section*/
+.mydemo ul {
+    text-align: center;
+    list-style: none;
+    margin-top: 20px ;
+}
+
+.mydemo ul li {
+    display: inline-block;
+    padding: 5%;
+
+}
+
+.mydemo ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.mydemo ul li:hover{
+	-webkit-transform: rotate(30deg);
+	transform: rotate(30deg);
+}
+
+.mydemo ul li figure {
+    font-size: 16px;
+    line-height: 16px;
+    padding: 5px;
+    margin: 10px 0;
+    color: white;
+    background-color: rgba(209, 133, 138, 0.8);
+    box-shadow: 2px 2px 8px #5a5a5a;
+}
+
+.s3.active .mydemo li {
+    -webkit-animation: mydemo 1s 0.2s;
+    animation: mydemo 1s 0.2s;
+}
+@-webkit-keyframes mydemo {
+    0% {
+        -webkit-transform: translate(-1000px, 1000px) rotate(350deg)
+    }
+    100% {
+        -webkit-transform: translate(0, 0) rotate(0deg)
+    }
+}
+
+@keyframes mydemo {
+    0% {
+        transform: translate(-1000px, 1000px) rotate(350deg)
+    }
+    100% {
+        transform: translate(0, 0) rotate(0deg)
+    }
+}
+
+/*第三个section*/
+.s4-content {
+    width: auto;
+    height: auto;
+    margin: 30px auto;
+}
+
+.s4-jindu {
+    float: left;
+    width: 15%;
+    margin: 20px 5%;
+}
+
+.s4-jindu p {
+    background-color: rgba(209, 133, 138, 0.8);
+    font-size: 15px;
+    line-height: 25px;
+    color: #f7f7f7;
+    box-shadow: 2px 2px 8px #5a5a5a;
+    cursor: pointer;
+}
+
+.s4-jindu p:hover {
+    background-color: #e7c6cd;
+    font-size: 17px;
+    font-weight: 600;
+    color:#989898;
+}
+
+.s4-jindu a {
+    text-decoration: none;
+    color: #f7f7f7;
+}
+
+.s4-other span {
+    display: inline-block;
+    width: auto;
+    font-size: 13px;
+    color: black;
+    line-height: 20px;
+    padding: 5px 10px;
+    margin: 5px 2px;
+    border-radius: 5px;
+}
+
+.s4-other .week {
+    background-color: rgba(209, 133, 138, 0.6);
+}
+
+.s4.active .week {
+    animation: week 1s 0.2s;
+    -webkit-animation: week 1s 0.2s;
+}
+
+.s4-other .strong {
+    background-color: rgba(209, 133, 138, 1);
+
+}
+
+.s4.active .strong {
+    animation: strong 1s 0.2s;
+    -webkit-animation: strong 1s 0.2s;
+}
+
+@keyframes strong {
+    0% {
+        transform: translate(-1000px)
+    }
+    100% {
+        transform: translate(0px)
+    }
+}
+
+@-webkit-keyframes strong {
+    0% {
+        transform: translate(-1000px)
+    }
+    100% {
+        transform: translate(0px)
+    }
+}
+
+@keyframes week {
+    0% {
+        transform: translate(1000px)
+    }
+    100% {
+        transform: translate(0px)
+    }
+}
+
+@-webkit-keyframes week {
+    0% {
+        transform: translate(1000px)
+    }
+    100% {
+        transform: translate(0px)
+    }
+}
+
+/*S5部分样式*/
+.myhope {
+    margin: 30px auto;
+}
+
+.myhope ul li {
+    list-style: none;
+    line-height: 40px;
+    letter-spacing: 0.1em;
+    opacity: 0;
+    transition: 3s;
+}
+
+.s5.active ul li {
+    opacity: 100;
+}
+
+.myhope-normal {
+    font-size: 15px;
+    color: #3E3E39 ;
+    opacity: 0.9;
+    font-weight: bold;
+}
+
+.myhope-strong {
+    font-size: 18px;
+    font-weight: bold;
+    color: rgba(209, 133, 138,0.99);
+}
+
+/*S6*/
+.s6-content {
+    margin-top: 50px;
+    padding: 0px 50px;
+}
+
+.s6 p {
+    font-size: 16px;
+    line-height: 50px;
+}
+
+.s6 p a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    width: 60%;
+    height: auto;
+    margin: 10px auto;
+    background-color: rgba(209, 133, 138, 0.8);
+    border-radius: 10px;
+}
+
+.s6 a:hover {
+    background-color: #5a5a5a;
+}
